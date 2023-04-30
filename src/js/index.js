@@ -1,3 +1,3 @@
-console.log("Start");
+import { keyboard } from "./keyboard.js";
 
-document.body.append("Start");
+keyboard();
