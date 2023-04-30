@@ -21,12 +21,44 @@ body {
   height: 28px;
 }
 .main__area {
-  width: 80%;
+  width: 855px;
   height: 300px;
-  margin: 30px;
+  margin: 15px;
   padding: 10px;
   font-size: 24px;
   resize: none;
   border: 2px solid #000;
   border-radius: 10px;
+}
+
+.keyboard {
+  padding: 5px;
+  margin: 15px;
+  background-color: rgb(235, 239, 243);
+}
+.keyboard__line {
+  display: flex;
+}
+.keyboard .btn {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  background-color: #cac6c6;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.keyboard .btn__long {
+  width: 120px;
+}
+.keyboard .btn__medium {
+  width: 65px;
+}
+.keyboard .btn__space {
+  width: 315px;
+}
+.keyboard .btn__backspace {
+  width: 140px;
 }/*# sourceMappingURL=styles.css.map */
