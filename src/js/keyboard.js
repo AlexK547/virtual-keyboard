@@ -1,5 +1,8 @@
 import keys from './keys.js';
 
+let isChange = false;
+let isEng = true;
+
 function drowKeys(keyboard, arrayKeys) {
   arrayKeys.forEach((element) => {
     const key = document.createElement('div');
@@ -34,12 +37,19 @@ export default function start() {
 
   const keyboard = document.createElement('div');
   keyboard.classList.add('keyboard');
-
   drowKeys(keyboard, keys);
+
+  const comment1 = document.createElement('p');
+  comment1.innerHTML = 'Keyboard created in Windows system';
+  comment1.classList.add('main__comment');
+  const comment2 = document.createElement('p');
+  comment2.innerHTML = 'To switch the language combination: left ctrl + alt';
+  comment2.classList.add('main__comment');
 
   main.appendChild(title);
   main.appendChild(textarea);
   main.append(keyboard);
+  main.append(comment1, comment2);
 
   document.body.append(main);
 }
@@ -47,7 +57,12 @@ export default function start() {
 function pressCaps() {
   const signal = document.querySelector('.btn__caps-signal');
   const buttons = document.querySelectorAll('.btn__small');
-  const symbol = signal.classList.contains('btn__caps-signal_active') ? 'symbolShift' : 'symbol';
+  let symbol = '';
+  if (signal.classList.contains('btn__caps-signal_active')) {
+    symbol = isEng ? 'symbolShift' : 'symbolRusShift';
+  } else {
+    symbol = isEng ? 'symbol' : 'symbolRus';
+  }
 
   buttons.forEach((element) => {
     const elem = element;
@@ -64,9 +79,31 @@ function pressShift(action) {
   const buttons = document.querySelectorAll('.btn__small');
   let symbol = '';
   if (action === 'down') {
-    symbol = 'symbolShift';
+    symbol = isEng ? 'symbolShift' : 'symbolRusShift';
   } else {
-    symbol = 'symbol';
+    symbol = isEng ? 'symbol' : 'symbolRus';
+  }
+
+  buttons.forEach((element) => {
+    const elem = element;
+    const code = elem.getAttribute('data-code');
+    keys.forEach((key) => {
+      if (key.code === code) {
+        elem.innerHTML = key[symbol];
+      }
+    });
+  });
+}
+
+function changeLanguage() {
+  const signal = document.querySelector('.btn__caps-signal');
+  const buttons = document.querySelectorAll('.btn__small');
+  let symbol = '';
+
+  if (isEng) {
+    symbol = signal.classList.contains('btn__caps-signal_active') ? 'symbolShift' : 'symbol';
+  } else {
+    symbol = signal.classList.contains('btn__caps-signal_active') ? 'symbolRusShift' : 'symbolRus';
   }
 
   buttons.forEach((element) => {
@@ -96,6 +133,15 @@ document.addEventListener('keydown', (event) => {
   if ((event.code === 'ShiftLeft' || event.code === 'ShiftRight') && signal.classList.contains('btn__caps-signal_active')) {
     pressShift('up');
   }
+
+  if (event.code === "ControlLeft") {
+    isChange = true;
+  }
+  if (event.code === "AltLeft" && isChange) {
+    isEng = !isEng;
+    changeLanguage();
+  }
+
   if (event.code === 'Tab') {
     const startPosition = textarea.selectionStart;
     const leftStr = textarea.value.slice(0, startPosition);
