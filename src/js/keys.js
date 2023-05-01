@@ -1,54 +1,67 @@
 export const keys1 = [
   {
     symbol: '`',
+    symbolShift: '~',
     code: 'Backquote',
   },
   {
     symbol: '1',
+    symbolShift: '!',
     code: 'Digit1',
   },
   {
     symbol: '2',
+    symbolShift: '@',
     code: 'Digit2',
   },
   {
     symbol: '3',
+    symbolShift: '#',
     code: 'Digit3',
   },
   {
     symbol: '4',
+    symbolShift: '$',
     code: 'Digit4',
   },
   {
     symbol: '5',
+    symbolShift: '%',
     code: 'Digit5',
   },
   {
     symbol: '6',
+    symbolShift: '^',
     code: 'Digit6',
   },
   {
     symbol: '7',
+    symbolShift: '&',
     code: 'Digit7',
   },
   {
     symbol: '8',
+    symbolShift: '*',
     code: 'Digit8',
   },
   {
     symbol: '9',
+    symbolShift: '(',
     code: 'Digit9',
   },
   {
     symbol: '0',
+    symbolShift: ')',
     code: 'Digit0',
   },
   {
     symbol: '-',
+    symbolShift: '_',
     code: 'Minus',
   },
   {
     symbol: '=',
+    symbolShift: '+',
     code: 'Equal',
   },
   {
