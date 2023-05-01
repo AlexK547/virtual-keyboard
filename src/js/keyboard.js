@@ -96,16 +96,15 @@ document.addEventListener('keydown', (event) => {
   if ((event.code === 'ShiftLeft' || event.code === 'ShiftRight') && signal.classList.contains('btn__caps-signal_active')) {
     pressShift('up');
   }
-  if (event.code === "Tab") {
-    let startPosition = textarea.selectionStart;
-    let leftStr = textarea.value.slice(0, startPosition);
-    let rightStr = textarea.value.slice(startPosition);
-    textarea.value = leftStr + "    " + rightStr;
+  if (event.code === 'Tab') {
+    const startPosition = textarea.selectionStart;
+    const leftStr = textarea.value.slice(0, startPosition);
+    const rightStr = textarea.value.slice(startPosition);
+    textarea.value = `${leftStr}    ${rightStr}`;
     textarea.setSelectionRange(startPosition + 4, startPosition + 4);
   } else {
     textarea.focus();
   }
-
 });
 
 document.addEventListener('keyup', (event) => {
@@ -139,26 +138,26 @@ document.addEventListener('mousedown', (event) => {
     pressShift('up');
   }
   if (button.classList.contains('btn__small')) {
-    let startPosition = textarea.selectionStart;
-    let leftStr = textarea.value.slice(0, startPosition);
-    let rightStr = textarea.value.slice(startPosition);
+    const startPosition = textarea.selectionStart;
+    const leftStr = textarea.value.slice(0, startPosition);
+    const rightStr = textarea.value.slice(startPosition);
     textarea.value = leftStr + button.innerHTML + rightStr;
     textarea.setSelectionRange(startPosition + 1, startPosition + 1);
   }
-  if (attribute === "Tab") {
-    let startPosition = textarea.selectionStart;
-    let leftStr = textarea.value.slice(0, startPosition);
-    let rightStr = textarea.value.slice(startPosition);
-    textarea.value = leftStr + "    " + rightStr;
+  if (attribute === 'Tab') {
+    const startPosition = textarea.selectionStart;
+    const leftStr = textarea.value.slice(0, startPosition);
+    const rightStr = textarea.value.slice(startPosition);
+    textarea.value = `${leftStr}    ${rightStr}`;
     textarea.setSelectionRange(startPosition + 4, startPosition + 4);
   }
-  if (attribute === "ArrowLeft") {
-    let startPosition = textarea.selectionStart;
+  if (attribute === 'ArrowLeft') {
+    const startPosition = textarea.selectionStart;
     if (startPosition === 0) return;
     textarea.setSelectionRange(startPosition - 1, startPosition - 1);
   }
-  if (attribute === "ArrowRight") {
-    let startPosition = textarea.selectionStart;
+  if (attribute === 'ArrowRight') {
+    const startPosition = textarea.selectionStart;
     if (startPosition === textarea.value.length) return;
     textarea.setSelectionRange(startPosition + 1, startPosition + 1);
   }
