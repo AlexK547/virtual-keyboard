@@ -1,3 +1,3 @@
-import { keyboard } from './keyboard.js';
+import start from './keyboard.js';
 
-keyboard();
+start();
