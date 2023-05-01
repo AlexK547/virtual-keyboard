@@ -30,6 +30,10 @@ body {
   border: 2px solid #000;
   border-radius: 10px;
 }
+.main__comment {
+  font-size: 20px;
+  margin: 5px;
+}
 
 .keyboard {
   width: 865px;
