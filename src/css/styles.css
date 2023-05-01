@@ -32,12 +32,12 @@ body {
 }
 
 .keyboard {
+  width: 865px;
   padding: 5px;
   margin: 15px;
   background-color: rgb(235, 239, 243);
-}
-.keyboard__line {
   display: flex;
+  flex-wrap: wrap;
 }
 .keyboard .btn {
   margin: 5px;
