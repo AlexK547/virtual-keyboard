@@ -33,13 +33,12 @@ body {
 }
 
 .keyboard {
+  width: 865px;
   padding: 5px;
   margin: 15px;
   background-color: rgb(235, 239, 243);
-
-  &__line {
-    display: flex;
-  }
+  display: flex;
+  flex-wrap: wrap;
 
   .btn {
     margin: 5px;
@@ -51,6 +50,10 @@ body {
     background-color: #cac6c6;
     font-size: 20px;
     border-radius: 10px;
+    box-shadow: 0 2px 0 2px #d9d9d9;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
 
     &__long {
       width: 120px;
@@ -63,6 +66,23 @@ body {
     }
     &__backspace {
       width: 140px;
+    }
+    &__caps-signal {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #000;
+      top: 5px;
+      right: 5px;
+    }
+    &__caps-signal_active {
+      background: #ff0000;
+    }
+    &_active {
+      background-color: #d1c4aa;
+      top: 3px;
+      box-shadow: 0 0 0 1px #cac6c6;
+      transition: all 0.3s;
     }
   }
 }

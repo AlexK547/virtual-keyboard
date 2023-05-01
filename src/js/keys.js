@@ -1,219 +1,371 @@
-export const keys1 = [
+const keys = [
   {
     symbol: '`',
+    symbolShift: '~',
+    size: 'btn__small',
+    code: 'Backquote',
   },
   {
     symbol: '1',
+    symbolShift: '!',
+    size: 'btn__small',
+    code: 'Digit1',
   },
   {
     symbol: '2',
+    symbolShift: '@',
+    size: 'btn__small',
+    code: 'Digit2',
   },
   {
     symbol: '3',
+    symbolShift: '#',
+    size: 'btn__small',
+    code: 'Digit3',
   },
   {
     symbol: '4',
+    symbolShift: '$',
+    size: 'btn__small',
+    code: 'Digit4',
   },
   {
     symbol: '5',
+    symbolShift: '%',
+    size: 'btn__small',
+    code: 'Digit5',
   },
   {
     symbol: '6',
+    symbolShift: '^',
+    size: 'btn__small',
+    code: 'Digit6',
   },
   {
     symbol: '7',
+    symbolShift: '&',
+    size: 'btn__small',
+    code: 'Digit7',
   },
   {
     symbol: '8',
+    symbolShift: '*',
+    size: 'btn__small',
+    code: 'Digit8',
   },
   {
     symbol: '9',
+    symbolShift: '(',
+    size: 'btn__small',
+    code: 'Digit9',
   },
   {
     symbol: '0',
+    symbolShift: ')',
+    size: 'btn__small',
+    code: 'Digit0',
   },
   {
     symbol: '-',
+    symbolShift: '_',
+    size: 'btn__small',
+    code: 'Minus',
   },
   {
     symbol: '=',
+    symbolShift: '+',
+    size: 'btn__small',
+    code: 'Equal',
   },
   {
     symbol: 'Backspace',
-    size: 'backspace',
+    size: 'btn__backspace',
+    code: 'Backspace',
   },
-];
-
-export const keys2 = [
   {
     symbol: 'Tab',
-    size: 'medium',
+    size: 'btn__medium',
+    code: 'Tab',
   },
   {
     symbol: 'q',
+    symbolShift: '+',
+    size: 'btn__small',
+    code: 'KeyQ',
   },
   {
     symbol: 'w',
+    symbolShift: 'W',
+    size: 'btn__small',
+    code: 'KeyW',
   },
   {
     symbol: 'e',
+    symbolShift: 'E',
+    size: 'btn__small',
+    code: 'KeyE',
   },
   {
     symbol: 'r',
+    symbolShift: 'R',
+    size: 'btn__small',
+    code: 'KeyR',
   },
   {
     symbol: 't',
+    symbolShift: 'T',
+    size: 'btn__small',
+    code: 'KeyT',
   },
   {
     symbol: 'y',
+    symbolShift: 'Y',
+    size: 'btn__small',
+    code: 'KeyY',
   },
   {
     symbol: 'u',
+    symbolShift: 'U',
+    size: 'btn__small',
+    code: 'KeyU',
   },
   {
     symbol: 'i',
+    symbolShift: 'I',
+    size: 'btn__small',
+    code: 'KeyI',
   },
   {
     symbol: 'o',
+    symbolShift: 'O',
+    size: 'btn__small',
+    code: 'KeyO',
   },
   {
     symbol: 'p',
+    symbolShift: 'P',
+    size: 'btn__small',
+    code: 'KeyP',
   },
   {
     symbol: '[',
+    symbolShift: '{',
+    size: 'btn__small',
+    code: 'BracketLeft',
   },
   {
     symbol: ']',
+    symbolShift: '}',
+    size: 'btn__small',
+    code: 'BracketRight',
   },
   {
     symbol: '\\',
+    symbolShift: '|',
+    size: 'btn__small',
+    code: 'Backslash',
   },
   {
     symbol: 'Del',
-    size: 'medium',
+    size: 'btn__medium',
+    code: 'Delete',
   },
-];
-
-export const keys3 = [
   {
     symbol: 'Caps Lock',
-    size: 'long',
+    size: 'btn__long',
+    code: 'CapsLock',
   },
   {
     symbol: 'a',
+    symbolShift: 'A',
+    size: 'btn__small',
+    code: 'KeyA',
   },
   {
     symbol: 's',
+    symbolShift: 'S',
+    size: 'btn__small',
+    code: 'KeyS',
   },
   {
     symbol: 'd',
+    symbolShift: 'D',
+    size: 'btn__small',
+    code: 'KeyD',
   },
   {
     symbol: 'f',
+    symbolShift: 'F',
+    size: 'btn__small',
+    code: 'KeyF',
   },
   {
     symbol: 'g',
+    symbolShift: 'G',
+    size: 'btn__small',
+    code: 'KeyG',
   },
   {
     symbol: 'h',
+    symbolShift: 'H',
+    size: 'btn__small',
+    code: 'KeyH',
   },
   {
     symbol: 'j',
+    symbolShift: 'J',
+    size: 'btn__small',
+    code: 'KeyJ',
   },
   {
     symbol: 'k',
+    symbolShift: 'K',
+    size: 'btn__small',
+    code: 'KeyK',
   },
   {
     symbol: 'l',
+    symbolShift: 'L',
+    size: 'btn__small',
+    code: 'KeyL',
   },
   {
     symbol: ';',
+    symbolShift: ':',
+    size: 'btn__small',
+    code: 'Semicolon',
   },
   {
     symbol: '\'',
+    symbolShift: '"',
+    size: 'btn__small',
+    code: 'Quote',
   },
   {
     symbol: 'Enter',
-    size: 'long',
+    size: 'btn__long',
+    code: 'Enter',
   },
-];
-
-export const keys4 = [
   {
     symbol: 'Shift',
-    size: 'long',
+    size: 'btn__long',
+    code: 'ShiftLeft',
   },
   {
     symbol: 'z',
+    symbolShift: 'Z',
+    size: 'btn__small',
+    code: 'KeyZ',
   },
   {
     symbol: 'x',
+    symbolShift: 'X',
+    size: 'btn__small',
+    code: 'KeyX',
   },
   {
     symbol: 'c',
+    symbolShift: 'C',
+    size: 'btn__small',
+    code: 'KeyC',
   },
   {
     symbol: 'v',
+    symbolShift: 'V',
+    size: 'btn__small',
+    code: 'KeyV',
   },
   {
     symbol: 'b',
+    symbolShift: 'B',
+    size: 'btn__small',
+    code: 'KeyB',
   },
   {
     symbol: 'n',
+    symbolShift: 'N',
+    size: 'btn__small',
+    code: 'KeyN',
   },
   {
     symbol: 'm',
+    symbolShift: 'M',
+    size: 'btn__small',
+    code: 'KeyM',
   },
   {
     symbol: ',',
+    symbolShift: '<',
+    size: 'btn__small',
+    code: 'Comma',
   },
   {
     symbol: '.',
+    symbolShift: '>',
+    size: 'btn__small',
+    code: 'Period',
   },
   {
     symbol: '/',
+    symbolShift: '?',
+    size: 'btn__small',
+    code: 'Slash',
   },
   {
     symbol: '&#9652;',
+    size: 'btn__standard',
+    code: 'ArrowUp',
   },
   {
     symbol: 'Shift',
-    size: 'long',
+    size: 'btn__long',
+    code: 'ShiftRight',
   },
-];
-
-export const keys5 = [
   {
     symbol: 'Ctrl',
-    size: 'medium',
+    size: 'btn__medium',
+    code: 'ControlLeft',
   },
   {
     symbol: 'Win',
-    size: 'medium',
+    size: 'btn__medium',
+    code: 'MetaLeft',
   },
   {
     symbol: 'Alt',
-    size: 'medium',
+    size: 'btn__medium',
+    code: 'AltLeft',
   },
   {
     symbol: '',
-    size: 'space',
+    size: 'btn__space',
+    code: 'Space',
   },
   {
     symbol: 'Alt',
-    size: 'medium',
+    size: 'btn__medium',
+    code: 'AltRight',
   },
   {
     symbol: '&#9666;',
+    size: 'btn__standard',
+    code: 'ArrowLeft',
   },
   {
     symbol: '&#9662;',
+    size: 'btn__standard',
+    code: 'ArrowDown',
   },
   {
     symbol: '&#9656;',
+    size: 'btn__standard',
+    code: 'ArrowRight',
   },
   {
     symbol: 'Ctrl',
-    size: 'medium',
+    size: 'btn__medium',
+    code: 'ControlRight',
   },
 ];
+
+export default keys;
