@@ -134,10 +134,10 @@ document.addEventListener('keydown', (event) => {
     pressShift('up');
   }
 
-  if (event.code === "ControlLeft") {
+  if (event.code === 'ControlLeft') {
     isChange = true;
   }
-  if (event.code === "AltLeft" && isChange) {
+  if (event.code === 'AltLeft' && isChange) {
     isEng = !isEng;
     changeLanguage();
   }
