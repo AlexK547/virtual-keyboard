@@ -83,6 +83,7 @@ function pressShift(action) {
 document.addEventListener('keydown', (event) => {
   const button = document.querySelector(`[data-code="${event.code}"]`);
   const signal = document.querySelector('.btn__caps-signal');
+  const textarea = document.querySelector('.main__area');
   if (!button) return;
   button.classList.add('btn_active');
   if (event.code === 'CapsLock') {
@@ -95,6 +96,16 @@ document.addEventListener('keydown', (event) => {
   if ((event.code === 'ShiftLeft' || event.code === 'ShiftRight') && signal.classList.contains('btn__caps-signal_active')) {
     pressShift('up');
   }
+  if (event.code === "Tab") {
+    let startPosition = textarea.selectionStart;
+    let leftStr = textarea.value.slice(0, startPosition);
+    let rightStr = textarea.value.slice(startPosition);
+    textarea.value = leftStr + "    " + rightStr;
+    textarea.setSelectionRange(startPosition + 4, startPosition + 4);
+  } else {
+    textarea.focus();
+  }
+
 });
 
 document.addEventListener('keyup', (event) => {
@@ -111,6 +122,7 @@ document.addEventListener('keyup', (event) => {
 });
 
 document.addEventListener('mousedown', (event) => {
+  const textarea = document.querySelector('.main__area');
   const attribute = event.target.getAttribute('data-code');
   const signal = document.querySelector('.btn__caps-signal');
   const button = document.querySelector(`[data-code="${attribute}"]`);
@@ -126,9 +138,34 @@ document.addEventListener('mousedown', (event) => {
   if ((attribute === 'ShiftLeft' || attribute === 'ShiftRight') && signal.classList.contains('btn__caps-signal_active')) {
     pressShift('up');
   }
+  if (button.classList.contains('btn__small')) {
+    let startPosition = textarea.selectionStart;
+    let leftStr = textarea.value.slice(0, startPosition);
+    let rightStr = textarea.value.slice(startPosition);
+    textarea.value = leftStr + button.innerHTML + rightStr;
+    textarea.setSelectionRange(startPosition + 1, startPosition + 1);
+  }
+  if (attribute === "Tab") {
+    let startPosition = textarea.selectionStart;
+    let leftStr = textarea.value.slice(0, startPosition);
+    let rightStr = textarea.value.slice(startPosition);
+    textarea.value = leftStr + "    " + rightStr;
+    textarea.setSelectionRange(startPosition + 4, startPosition + 4);
+  }
+  if (attribute === "ArrowLeft") {
+    let startPosition = textarea.selectionStart;
+    if (startPosition === 0) return;
+    textarea.setSelectionRange(startPosition - 1, startPosition - 1);
+  }
+  if (attribute === "ArrowRight") {
+    let startPosition = textarea.selectionStart;
+    if (startPosition === textarea.value.length) return;
+    textarea.setSelectionRange(startPosition + 1, startPosition + 1);
+  }
 });
 
 document.addEventListener('mouseup', (event) => {
+  const textarea = document.querySelector('.main__area');
   const attribute = event.target.getAttribute('data-code');
   const signal = document.querySelector('.btn__caps-signal');
   const button = document.querySelector(`[data-code="${attribute}"]`);
@@ -140,4 +177,5 @@ document.addEventListener('mouseup', (event) => {
   if ((attribute === 'ShiftLeft' || attribute === 'ShiftRight') && signal.classList.contains('btn__caps-signal_active')) {
     pressShift('down');
   }
+  textarea.focus();
 });
