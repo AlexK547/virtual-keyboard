@@ -6,32 +6,32 @@ function drowKeys(keys) {
   const lineKeys = document.createElement('div');
   lineKeys.classList.add('keyboard__line');
 
-  for (let i = 0; i < keys.length; i++) {
+  keys.forEach((element) => {
     const key = document.createElement('div');
-    key.innerHTML = keys[i].symbol;
+    key.innerHTML = element.symbol;
     key.classList.add('btn');
-    if (keys[i].size === 'long') {
+    if (element.size === 'long') {
       key.classList.add('btn__long');
     }
-    if (keys[i].size === 'medium') {
+    if (element.size === 'medium') {
       key.classList.add('btn__medium');
     }
-    if (keys[i].size === 'space') {
+    if (element.size === 'space') {
       key.classList.add('btn__space');
     }
-    if (keys[i].size === 'backspace') {
+    if (element.size === 'backspace') {
       key.classList.add('btn__backspace');
     }
-    if (keys[i].code === 'CapsLock') {
+    if (element.code === 'CapsLock') {
       const signal = document.createElement('div');
       signal.classList.add('btn__caps-signal');
       key.append(signal);
     }
-    if (keys[i].code) {
-      key.setAttribute('data-code', keys[i].code);
+    if (element.code) {
+      key.setAttribute('data-code', element.code);
     }
     lineKeys.append(key);
-  }
+  });
 
   return lineKeys;
 }
