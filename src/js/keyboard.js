@@ -154,6 +154,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 document.addEventListener('keyup', (event) => {
+  const textarea = document.querySelector('.main__area');
   const button = document.querySelector(`[data-code="${event.code}"]`);
   const signal = document.querySelector('.btn__caps-signal');
   if (!button) return;
@@ -163,6 +164,13 @@ document.addEventListener('keyup', (event) => {
   }
   if ((event.code === 'ShiftLeft' || event.code === 'ShiftRight') && signal.classList.contains('btn__caps-signal_active')) {
     pressShift('down');
+  }
+  if (button.classList.contains('btn__small')) {
+    const startPosition = textarea.selectionStart;
+    const leftStr = textarea.value.slice(0, startPosition - 1);
+    const rightStr = textarea.value.slice(startPosition + 1);
+    textarea.value = leftStr + button.innerHTML + rightStr;
+    textarea.setSelectionRange(startPosition + 1, startPosition + 1);
   }
 });
 
@@ -188,6 +196,29 @@ document.addEventListener('mousedown', (event) => {
     const leftStr = textarea.value.slice(0, startPosition);
     const rightStr = textarea.value.slice(startPosition);
     textarea.value = leftStr + button.innerHTML + rightStr;
+    textarea.setSelectionRange(startPosition + 1, startPosition + 1);
+  }
+  if (attribute === 'Backspace') {
+    const startPosition = textarea.selectionStart;
+    if (startPosition === 0) return;
+    const leftStr = textarea.value.slice(0, startPosition - 1);
+    const rightStr = textarea.value.slice(startPosition);
+    textarea.value = `${leftStr}${rightStr}`;
+    textarea.setSelectionRange(startPosition - 1, startPosition - 1);
+  }
+  if (attribute === 'Delete') {
+    const startPosition = textarea.selectionStart;
+    if (startPosition === textarea.value.length) return;
+    const leftStr = textarea.value.slice(0, startPosition);
+    const rightStr = textarea.value.slice(startPosition + 1);
+    textarea.value = `${leftStr}${rightStr}`;
+    textarea.setSelectionRange(startPosition, startPosition);
+  }
+  if (attribute === 'Enter') {
+    const startPosition = textarea.selectionStart;
+    const leftStr = textarea.value.slice(0, startPosition);
+    const rightStr = textarea.value.slice(startPosition);
+    textarea.value = `${leftStr}\n${rightStr}`;
     textarea.setSelectionRange(startPosition + 1, startPosition + 1);
   }
   if (attribute === 'Tab') {
