@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(217, 247, 218);
+}
+
+.main {
+  margin: 0 auto;
+  width: 1200px;
+  height: 100vh;
+  background: #f5d6b9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__title {
+  margin: 50px;
+  height: 28px;
+}
+.main__area {
+  width: 855px;
+  height: 300px;
+  margin: 15px;
+  padding: 10px;
+  font-size: 24px;
+  resize: none;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+.main__comment {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.keyboard {
+  width: 865px;
+  padding: 5px;
+  margin: 15px;
+  background-color: rgb(235, 239, 243);
+  display: flex;
+  flex-wrap: wrap;
+}
+.keyboard .btn {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  background-color: #cac6c6;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 0 2px #d9d9d9;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.keyboard .btn__long {
+  width: 120px;
+}
+.keyboard .btn__medium {
+  width: 65px;
+}
+.keyboard .btn__space {
+  width: 315px;
+}
+.keyboard .btn__backspace {
+  width: 140px;
+}
+.keyboard .btn__caps-signal {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #000;
+  top: 5px;
+  right: 5px;
+}
+.keyboard .btn__caps-signal_active {
+  background: #ff0000;
+}
+.keyboard .btn_active {
+  background-color: #d1c4aa;
+  top: 3px;
+  box-shadow: 0 0 0 1px #cac6c6;
+  transition: all 0.3s;
+}/*# sourceMappingURL=styles.css.map */
